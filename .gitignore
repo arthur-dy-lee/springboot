@@ -127,3 +127,6 @@ local.properties
 .scala_dependencies
 .worksheet
 
+# mac
+.DS_Store
+
