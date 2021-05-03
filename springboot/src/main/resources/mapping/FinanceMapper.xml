@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="arthur.dy.lee.dao.FinanceMapper">
+  <resultMap id="BaseResultMap" type="arthur.dy.lee.model.Finance">
+    <!--          -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="fid" jdbcType="INTEGER" property="fid" />
+    <result column="consumerProject" jdbcType="VARCHAR" property="consumerproject" />
+    <result column="consumer" jdbcType="VARCHAR" property="consumer" />
+    <result column="forwho" jdbcType="VARCHAR" property="forwho" />
+    <result column="fee" jdbcType="REAL" property="fee" />
+    <result column="consumerDate" jdbcType="DATE" property="consumerdate" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="deleteFlag" jdbcType="BIT" property="deleteflag" />
+    <result column="createDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="modifyDate" jdbcType="TIMESTAMP" property="modifydate" />
+    <result column="creater" jdbcType="VARCHAR" property="creater" />
+    <result column="bak" jdbcType="VARCHAR" property="bak" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--          -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--          -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--          -->
+    id, fid, consumerProject, consumer, forwho, fee, consumerDate, comment, deleteFlag, 
+    createDate, modifyDate, creater, bak
+  </sql>
+  <select id="selectByExample" parameterType="arthur.dy.lee.model.FinanceExample" resultMap="BaseResultMap">
+    <!--          -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from finance
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="limit != null">
+      <if test="offset != null">
+        limit ${offset}, ${limit}
+      </if>
+      <if test="offset == null">
+        limit ${limit}
+      </if>
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--          -->
+    select 
+    <include refid="Base_Column_List" />
+    from finance
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--          -->
+    delete from finance
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="arthur.dy.lee.model.FinanceExample">
+    <!--          -->
+    delete from finance
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="arthur.dy.lee.model.Finance">
+    <!--          -->
+    insert into finance (id, fid, consumerProject, 
+      consumer, forwho, fee, 
+      consumerDate, comment, deleteFlag, 
+      createDate, modifyDate, creater, 
+      bak)
+    values (#{id,jdbcType=VARCHAR}, #{fid,jdbcType=INTEGER}, #{consumerproject,jdbcType=VARCHAR}, 
+      #{consumer,jdbcType=VARCHAR}, #{forwho,jdbcType=VARCHAR}, #{fee,jdbcType=REAL}, 
+      #{consumerdate,jdbcType=DATE}, #{comment,jdbcType=VARCHAR}, #{deleteflag,jdbcType=BIT}, 
+      #{createdate,jdbcType=TIMESTAMP}, #{modifydate,jdbcType=TIMESTAMP}, #{creater,jdbcType=VARCHAR}, 
+      #{bak,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="arthur.dy.lee.model.Finance">
+    <!--          -->
+    insert into finance
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="fid != null">
+        fid,
+      </if>
+      <if test="consumerproject != null">
+        consumerProject,
+      </if>
+      <if test="consumer != null">
+        consumer,
+      </if>
+      <if test="forwho != null">
+        forwho,
+      </if>
+      <if test="fee != null">
+        fee,
+      </if>
+      <if test="consumerdate != null">
+        consumerDate,
+      </if>
+      <if test="comment != null">
+        comment,
+      </if>
+      <if test="deleteflag != null">
+        deleteFlag,
+      </if>
+      <if test="createdate != null">
+        createDate,
+      </if>
+      <if test="modifydate != null">
+        modifyDate,
+      </if>
+      <if test="creater != null">
+        creater,
+      </if>
+      <if test="bak != null">
+        bak,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="fid != null">
+        #{fid,jdbcType=INTEGER},
+      </if>
+      <if test="consumerproject != null">
+        #{consumerproject,jdbcType=VARCHAR},
+      </if>
+      <if test="consumer != null">
+        #{consumer,jdbcType=VARCHAR},
+      </if>
+      <if test="forwho != null">
+        #{forwho,jdbcType=VARCHAR},
+      </if>
+      <if test="fee != null">
+        #{fee,jdbcType=REAL},
+      </if>
+      <if test="consumerdate != null">
+        #{consumerdate,jdbcType=DATE},
+      </if>
+      <if test="comment != null">
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteflag != null">
+        #{deleteflag,jdbcType=BIT},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifydate != null">
+        #{modifydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creater != null">
+        #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="bak != null">
+        #{bak,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="arthur.dy.lee.model.FinanceExample" resultType="java.lang.Long">
+    <!--          -->
+    select count(*) from finance
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--          -->
+    update finance
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fid != null">
+        fid = #{record.fid,jdbcType=INTEGER},
+      </if>
+      <if test="record.consumerproject != null">
+        consumerProject = #{record.consumerproject,jdbcType=VARCHAR},
+      </if>
+      <if test="record.consumer != null">
+        consumer = #{record.consumer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.forwho != null">
+        forwho = #{record.forwho,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fee != null">
+        fee = #{record.fee,jdbcType=REAL},
+      </if>
+      <if test="record.consumerdate != null">
+        consumerDate = #{record.consumerdate,jdbcType=DATE},
+      </if>
+      <if test="record.comment != null">
+        comment = #{record.comment,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deleteflag != null">
+        deleteFlag = #{record.deleteflag,jdbcType=BIT},
+      </if>
+      <if test="record.createdate != null">
+        createDate = #{record.createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.modifydate != null">
+        modifyDate = #{record.modifydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.creater != null">
+        creater = #{record.creater,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bak != null">
+        bak = #{record.bak,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--          -->
+    update finance
+    set id = #{record.id,jdbcType=VARCHAR},
+      fid = #{record.fid,jdbcType=INTEGER},
+      consumerProject = #{record.consumerproject,jdbcType=VARCHAR},
+      consumer = #{record.consumer,jdbcType=VARCHAR},
+      forwho = #{record.forwho,jdbcType=VARCHAR},
+      fee = #{record.fee,jdbcType=REAL},
+      consumerDate = #{record.consumerdate,jdbcType=DATE},
+      comment = #{record.comment,jdbcType=VARCHAR},
+      deleteFlag = #{record.deleteflag,jdbcType=BIT},
+      createDate = #{record.createdate,jdbcType=TIMESTAMP},
+      modifyDate = #{record.modifydate,jdbcType=TIMESTAMP},
+      creater = #{record.creater,jdbcType=VARCHAR},
+      bak = #{record.bak,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="arthur.dy.lee.model.Finance">
+    <!--          -->
+    update finance
+    <set>
+      <if test="fid != null">
+        fid = #{fid,jdbcType=INTEGER},
+      </if>
+      <if test="consumerproject != null">
+        consumerProject = #{consumerproject,jdbcType=VARCHAR},
+      </if>
+      <if test="consumer != null">
+        consumer = #{consumer,jdbcType=VARCHAR},
+      </if>
+      <if test="forwho != null">
+        forwho = #{forwho,jdbcType=VARCHAR},
+      </if>
+      <if test="fee != null">
+        fee = #{fee,jdbcType=REAL},
+      </if>
+      <if test="consumerdate != null">
+        consumerDate = #{consumerdate,jdbcType=DATE},
+      </if>
+      <if test="comment != null">
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteflag != null">
+        deleteFlag = #{deleteflag,jdbcType=BIT},
+      </if>
+      <if test="createdate != null">
+        createDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifydate != null">
+        modifyDate = #{modifydate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creater != null">
+        creater = #{creater,jdbcType=VARCHAR},
+      </if>
+      <if test="bak != null">
+        bak = #{bak,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="arthur.dy.lee.model.Finance">
+    <!--          -->
+    update finance
+    set fid = #{fid,jdbcType=INTEGER},
+      consumerProject = #{consumerproject,jdbcType=VARCHAR},
+      consumer = #{consumer,jdbcType=VARCHAR},
+      forwho = #{forwho,jdbcType=VARCHAR},
+      fee = #{fee,jdbcType=REAL},
+      consumerDate = #{consumerdate,jdbcType=DATE},
+      comment = #{comment,jdbcType=VARCHAR},
+      deleteFlag = #{deleteflag,jdbcType=BIT},
+      createDate = #{createdate,jdbcType=TIMESTAMP},
+      modifyDate = #{modifydate,jdbcType=TIMESTAMP},
+      creater = #{creater,jdbcType=VARCHAR},
+      bak = #{bak,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
