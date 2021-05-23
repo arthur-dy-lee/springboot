@@ -2,10 +2,10 @@ app:
   id: Uhw7L2bcQAGkHmc1KDuldl1OMm64n2q6
 
 
-redis:
-  host: 127.0.0.1
-  port: 6379
-  password: 123456a?
+#redis:
+#  host: 127.0.0.1
+#  port: 6379
+#  password: 123456a?
 
 
 spring:
