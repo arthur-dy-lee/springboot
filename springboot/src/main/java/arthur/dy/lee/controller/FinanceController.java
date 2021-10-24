@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2017/6/25.
@@ -39,6 +41,8 @@ public class FinanceController {
 //            //threadLocal.set(new char[1024*1024*1]);
 //            list1.add(new BigObj());
 //        }
+        Map<String, Integer> map = new HashMap<>();
+        map.put("totalItemsBought", 1);
         return ret.toString();
     }
 
@@ -59,6 +63,7 @@ public class FinanceController {
             }
         });
         thread.start();
+
         return ret.toString();
     }
 
