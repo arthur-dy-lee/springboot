@@ -25,7 +25,7 @@ import java.util.Map;
  * 链接：https://leetcode-cn.com/problems/string-to-integer-atoi
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class Automaton {
+public class String2Integer {
     public  int    sign  = 1;
     public  long   ans   = 0;
     private String state = "start";
@@ -61,16 +61,16 @@ public class Automaton {
     }
 
     public int myAtoi(String str) {
-        Automaton automaton = new Automaton();
+        String2Integer stringToInteger = new String2Integer();
         int length = str.length();
         for (int i = 0; i < length; ++i) {
-            automaton.get(str.charAt(i));
+            stringToInteger.get(str.charAt(i));
         }
-        return (int) (automaton.sign * automaton.ans);
+        return (int) (stringToInteger.sign * stringToInteger.ans);
     }
 
     public static void main(String[] args) {
-        Automaton a = new Automaton();
+        String2Integer a = new String2Integer();
         String s1 = "42";
         String s2 = "   -42";
         String s3 = "4193 with words";
@@ -85,6 +85,7 @@ public class Automaton {
         String s = "4";
         int res = s.charAt(0) - '0';
         System.out.println("res = " + res);
+        Integer.parseInt("4");
 
     }
 }
