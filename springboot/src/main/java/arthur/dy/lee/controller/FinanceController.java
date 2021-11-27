@@ -149,6 +149,46 @@ public class FinanceController {
                     e -> ret.append(
                             e.getConsumer() + "/n," + e.getConsumerproject() + "/n; " + e.getCreatedate() + "/n, "));
         }
+        ret.append("------------------------------------------------------------------------------------");
+        ret.append("===============datasource69===============");
+        list = this.service.listFinace69(null, null);
+        if (!CollectionUtils.isEmpty(list)) {
+            list.forEach(
+                    e -> ret.append(
+                            e.getConsumer() + "/n," + e.getConsumerproject() + "/n; " + e.getCreatedate() + "/n, "));
+        }
+        ret.append("------------------------------------------------------------------------------------");
+        ret.append("===============datasource79===============");
+        list = this.service.listFinace79(null, null);
+        if (!CollectionUtils.isEmpty(list)) {
+            list.forEach(
+                    e -> ret.append(
+                            e.getConsumer() + "/n," + e.getConsumerproject() + "/n; " + e.getCreatedate() + "/n, "));
+        }
+        ret.append("------------------------------------------------------------------------------------");
+        ret.append("===============datasource89===============");
+        list = this.service.listFinace89(null, null);
+        if (!CollectionUtils.isEmpty(list)) {
+            list.forEach(
+                    e -> ret.append(
+                            e.getConsumer() + "/n," + e.getConsumerproject() + "/n; " + e.getCreatedate() + "/n, "));
+        }
+        ret.append("------------------------------------------------------------------------------------");
+        ret.append("===============datasource99===============");
+        list = this.service.listFinace99(null, null);
+        if (!CollectionUtils.isEmpty(list)) {
+            list.forEach(
+                    e -> ret.append(
+                            e.getConsumer() + "/n," + e.getConsumerproject() + "/n; " + e.getCreatedate() + "/n, "));
+        }
+        ret.append("------------------------------------------------------------------------------------");
+        ret.append("===============datasource100===============");
+        list = this.service.listFinace100(null, null);
+        if (!CollectionUtils.isEmpty(list)) {
+            list.forEach(
+                    e -> ret.append(
+                            e.getConsumer() + "/n," + e.getConsumerproject() + "/n; " + e.getCreatedate() + "/n, "));
+        }
         return ret.toString();
     }
 

@@ -47,7 +47,27 @@ public class DynamicDataSourceConfig {
                                         DataSource dataSourceTest53, DataSource dataSourceTest54,
                                         DataSource dataSourceTest55, DataSource dataSourceTest56,
                                         DataSource dataSourceTest57, DataSource dataSourceTest58,
-                                        DataSource dataSourceTest59
+                                        DataSource dataSourceTest59, DataSource dataSourceTest60,
+                                        DataSource dataSourceTest61, DataSource dataSourceTest62,
+                                        DataSource dataSourceTest63, DataSource dataSourceTest64,
+                                        DataSource dataSourceTest65, DataSource dataSourceTest66,
+                                        DataSource dataSourceTest67, DataSource dataSourceTest68,
+                                        DataSource dataSourceTest69, DataSource dataSourceTest70,
+                                        DataSource dataSourceTest71, DataSource dataSourceTest72,
+                                        DataSource dataSourceTest73, DataSource dataSourceTest74,
+                                        DataSource dataSourceTest75, DataSource dataSourceTest76,
+                                        DataSource dataSourceTest77, DataSource dataSourceTest78,
+                                        DataSource dataSourceTest79, DataSource dataSourceTest80,
+                                        DataSource dataSourceTest81, DataSource dataSourceTest82,
+                                        DataSource dataSourceTest83, DataSource dataSourceTest84,
+                                        DataSource dataSourceTest85, DataSource dataSourceTest86,
+                                        DataSource dataSourceTest87, DataSource dataSourceTest88,
+                                        DataSource dataSourceTest89, DataSource dataSourceTest90,
+                                        DataSource dataSourceTest91, DataSource dataSourceTest92,
+                                        DataSource dataSourceTest93, DataSource dataSourceTest94,
+                                        DataSource dataSourceTest95, DataSource dataSourceTest96,
+                                        DataSource dataSourceTest97, DataSource dataSourceTest98,
+                                        DataSource dataSourceTest99, DataSource dataSourceTest100
     ) {
 
         Map<Object, Object> targetDataSources = new HashMap<>();
@@ -113,6 +133,47 @@ public class DynamicDataSourceConfig {
         targetDataSources.put(DataSourceNames.TEST57, dataSourceTest57);
         targetDataSources.put(DataSourceNames.TEST58, dataSourceTest58);
         targetDataSources.put(DataSourceNames.TEST59, dataSourceTest59);
+        targetDataSources.put(DataSourceNames.TEST60, dataSourceTest60);
+        targetDataSources.put(DataSourceNames.TEST61, dataSourceTest61);
+        targetDataSources.put(DataSourceNames.TEST62, dataSourceTest62);
+        targetDataSources.put(DataSourceNames.TEST63, dataSourceTest63);
+        targetDataSources.put(DataSourceNames.TEST64, dataSourceTest64);
+        targetDataSources.put(DataSourceNames.TEST65, dataSourceTest65);
+        targetDataSources.put(DataSourceNames.TEST66, dataSourceTest66);
+        targetDataSources.put(DataSourceNames.TEST67, dataSourceTest67);
+        targetDataSources.put(DataSourceNames.TEST68, dataSourceTest68);
+        targetDataSources.put(DataSourceNames.TEST69, dataSourceTest69);
+        targetDataSources.put(DataSourceNames.TEST70, dataSourceTest70);
+        targetDataSources.put(DataSourceNames.TEST71, dataSourceTest71);
+        targetDataSources.put(DataSourceNames.TEST72, dataSourceTest72);
+        targetDataSources.put(DataSourceNames.TEST73, dataSourceTest73);
+        targetDataSources.put(DataSourceNames.TEST74, dataSourceTest74);
+        targetDataSources.put(DataSourceNames.TEST75, dataSourceTest75);
+        targetDataSources.put(DataSourceNames.TEST76, dataSourceTest76);
+        targetDataSources.put(DataSourceNames.TEST77, dataSourceTest77);
+        targetDataSources.put(DataSourceNames.TEST78, dataSourceTest78);
+        targetDataSources.put(DataSourceNames.TEST79, dataSourceTest79);
+        targetDataSources.put(DataSourceNames.TEST80, dataSourceTest80);
+        targetDataSources.put(DataSourceNames.TEST81, dataSourceTest81);
+        targetDataSources.put(DataSourceNames.TEST82, dataSourceTest82);
+        targetDataSources.put(DataSourceNames.TEST83, dataSourceTest83);
+        targetDataSources.put(DataSourceNames.TEST84, dataSourceTest84);
+        targetDataSources.put(DataSourceNames.TEST85, dataSourceTest85);
+        targetDataSources.put(DataSourceNames.TEST86, dataSourceTest86);
+        targetDataSources.put(DataSourceNames.TEST87, dataSourceTest87);
+        targetDataSources.put(DataSourceNames.TEST88, dataSourceTest88);
+        targetDataSources.put(DataSourceNames.TEST89, dataSourceTest89);
+        targetDataSources.put(DataSourceNames.TEST90, dataSourceTest90);
+        targetDataSources.put(DataSourceNames.TEST91, dataSourceTest91);
+        targetDataSources.put(DataSourceNames.TEST92, dataSourceTest92);
+        targetDataSources.put(DataSourceNames.TEST93, dataSourceTest93);
+        targetDataSources.put(DataSourceNames.TEST94, dataSourceTest94);
+        targetDataSources.put(DataSourceNames.TEST95, dataSourceTest95);
+        targetDataSources.put(DataSourceNames.TEST96, dataSourceTest96);
+        targetDataSources.put(DataSourceNames.TEST97, dataSourceTest97);
+        targetDataSources.put(DataSourceNames.TEST98, dataSourceTest98);
+        targetDataSources.put(DataSourceNames.TEST99, dataSourceTest99);
+        targetDataSources.put(DataSourceNames.TEST100, dataSourceTest100);
         return new DynamicDataSource(dataSourceTest1, targetDataSources);
     }
 
@@ -470,4 +531,253 @@ public class DynamicDataSourceConfig {
         return DataSourceBuilder.create().build();
     }
 
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test60")
+    public DataSource dataSourceTest60() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test61")
+    public DataSource dataSourceTest61() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test62")
+    public DataSource dataSourceTest62() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test63")
+    public DataSource dataSourceTest63() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test64")
+    public DataSource dataSourceTest64() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test65")
+    public DataSource dataSourceTest65() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test66")
+    public DataSource dataSourceTest66() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test67")
+    public DataSource dataSourceTest67() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test68")
+    public DataSource dataSourceTest68() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test69")
+    public DataSource dataSourceTest69() {
+        return DataSourceBuilder.create().build();
+    }
+
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test70")
+    public DataSource dataSourceTest70() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test71")
+    public DataSource dataSourceTest71() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test72")
+    public DataSource dataSourceTest72() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test73")
+    public DataSource dataSourceTest73() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test74")
+    public DataSource dataSourceTest74() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test75")
+    public DataSource dataSourceTest75() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test76")
+    public DataSource dataSourceTest76() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test77")
+    public DataSource dataSourceTest77() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test78")
+    public DataSource dataSourceTest78() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test79")
+    public DataSource dataSourceTest79() {
+        return DataSourceBuilder.create().build();
+    }
+
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test80")
+    public DataSource dataSourceTest80() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test81")
+    public DataSource dataSourceTest81() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test82")
+    public DataSource dataSourceTest82() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test83")
+    public DataSource dataSourceTest83() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test84")
+    public DataSource dataSourceTest84() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test85")
+    public DataSource dataSourceTest85() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test86")
+    public DataSource dataSourceTest86() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test87")
+    public DataSource dataSourceTest87() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test88")
+    public DataSource dataSourceTest88() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test89")
+    public DataSource dataSourceTest89() {
+        return DataSourceBuilder.create().build();
+    }
+
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test90")
+    public DataSource dataSourceTest90() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test91")
+    public DataSource dataSourceTest91() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test92")
+    public DataSource dataSourceTest92() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test93")
+    public DataSource dataSourceTest93() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test94")
+    public DataSource dataSourceTest94() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test95")
+    public DataSource dataSourceTest95() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test96")
+    public DataSource dataSourceTest96() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test97")
+    public DataSource dataSourceTest97() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test98")
+    public DataSource dataSourceTest98() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test99")
+    public DataSource dataSourceTest99() {
+        return DataSourceBuilder.create().build();
+    }
+
+    @Bean
+    @ConfigurationProperties("spring.datasource.test100")
+    public DataSource dataSourceTest100() {
+        return DataSourceBuilder.create().build();
+    }
 }

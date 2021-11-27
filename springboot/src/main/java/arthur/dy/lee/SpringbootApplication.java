@@ -5,6 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.session.data.redis.config.ConfigureRedisAction;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
@@ -22,11 +24,11 @@ public class SpringbootApplication {
         return ConfigureRedisAction.NO_OP;
     }
 
-    //    @Bean
-    //    public JedisConnectionFactory redisConnectionFactory() {
-    //        RedisStandaloneConfiguration config = new RedisStandaloneConfiguration("127.0.0.1", 6379);
-    //        config.setPassword("123456a?");
-    //        return new JedisConnectionFactory(config);
-    //    }
+    @Bean
+    public JedisConnectionFactory redisConnectionFactory() {
+        RedisStandaloneConfiguration config = new RedisStandaloneConfiguration("127.0.0.1", 6379);
+        config.setPassword("123456a?");
+        return new JedisConnectionFactory(config);
+    }
 
 }
