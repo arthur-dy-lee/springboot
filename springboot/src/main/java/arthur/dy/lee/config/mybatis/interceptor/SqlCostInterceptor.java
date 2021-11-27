@@ -1,12 +1,5 @@
 package arthur.dy.lee.config.mybatis.interceptor;
 
-import java.lang.reflect.Field;
-import java.sql.Statement;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-
 import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.ParameterMapping;
@@ -18,6 +11,13 @@ import org.apache.ibatis.plugin.Signature;
 import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.defaults.DefaultSqlSession.StrictMap;
 import org.springframework.stereotype.Component;
+
+import java.lang.reflect.Field;
+import java.sql.Statement;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
 
 /**
  * Sql执行时间记录拦截器
@@ -113,7 +113,7 @@ public class SqlCostInterceptor implements Interceptor {
     /**
      * 美化Sql
      */
-    private String beautifySql(String sql) {
+    private static String beautifySql(String sql) {
         // sql = sql.replace("\n", "").replace("\t", "").replace("  ", " ").replace("( ", "(").replace(" )", ")").replace(" ,", ",");
         sql = sql.replaceAll("[\\s\n ]+"," ");
         return sql;
@@ -146,7 +146,8 @@ public class SqlCostInterceptor implements Interceptor {
     /**
      * 处理参数为Map的场景
      */
-    private String handleMapParameter(String sql, Map<?, ?> paramMap, List<ParameterMapping> parameterMappingList) {
+    private static String handleMapParameter(String sql, Map<?, ?> paramMap,
+                                             List<ParameterMapping> parameterMappingList) {
         for (ParameterMapping parameterMapping : parameterMappingList) {
             Object propertyName = parameterMapping.getProperty();
             Object propertyValue = paramMap.get(propertyName);
@@ -204,14 +205,14 @@ public class SqlCostInterceptor implements Interceptor {
     /**
      * 是否DefaultSqlSession的内部类StrictMap
      */
-    private boolean isStrictMap(Class<?> parameterObjectClass) {
+    private static boolean isStrictMap(Class<?> parameterObjectClass) {
         return parameterObjectClass.isAssignableFrom(StrictMap.class);
     }
 
     /**
      * 是否List的实现类
      */
-    private boolean isList(Class<?> clazz) {
+    private static boolean isList(Class<?> clazz) {
         Class<?>[] interfaceClasses = clazz.getInterfaces();
         for (Class<?> interfaceClass : interfaceClasses) {
             if (interfaceClass.isAssignableFrom(List.class)) {
@@ -222,10 +223,10 @@ public class SqlCostInterceptor implements Interceptor {
         return false;
     }
 
-    /**
+    /**`
      * 是否Map的实现类
      */
-    private boolean isMap(Class<?> parameterObjectClass) {
+    private static boolean isMap(Class<?> parameterObjectClass) {
         Class<?>[] interfaceClasses = parameterObjectClass.getInterfaces();
         for (Class<?> interfaceClass : interfaceClasses) {
             if (interfaceClass.isAssignableFrom(Map.class)) {

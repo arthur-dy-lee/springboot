@@ -39,13 +39,13 @@ CREATE TABLE `finance` (
 -- ----------------------------
 -- Records of finance
 -- ----------------------------
-INSERT INTO `finance` VALUES ('00cc47cd1e014f138d9a0704d21481b6', '10700', 'onlycook 韩式304不锈钢筷子勺子环保便携餐具盒旅行', '1', '1', '25.00', '2016-03-15', '中午带饭', '0', '2016-03-15 22:52:34', null, null, null);
-INSERT INTO `finance` VALUES ('15c00ceef76842a8a1fe22028f2b6502', '10102', '锅巴', '1', '1', '4.20', '2016-03-15', '苏微快乐锅巴鸡排味', '0', '2016-03-15 22:54:40', null, null, null);
-INSERT INTO `finance` VALUES ('42e7f3fed6e748e197382ea86cd45087', '10700', 'LOCKLOCK乐扣耐热玻璃饭盒', '1', '1', '119.00', '2016-03-15', '中午带饭', '0', '2016-03-15 22:51:07', null, null, null);
-INSERT INTO `finance` VALUES ('5c4b8944b74048fca834359079c7d89d', '10700', '公牛（BULL）插座', '1', '3', '47.70', '2016-03-15', '电脑、电动座椅', '0', '2016-03-15 22:53:49', null, null, null);
-INSERT INTO `finance` VALUES ('82505bb0c4594733897f439d585a78d8', '10700', '便当袋保温袋子', '1', '1', '37.00', '2016-03-15', '中午带饭', '0', '2016-03-15 22:51:57', null, null, null);
-INSERT INTO `finance` VALUES ('9838c33926c3459291ea5fb1e2ac93a7', '10902', '天猫魔盒', '1', '3', '249.00', '2016-03-15', '天猫魔盒，看电视用', '0', '2016-03-15 22:49:40', null, null, null);
-INSERT INTO `finance` VALUES ('b5b8471acef049de9a32637ddce41c71', '10300', '加油', '1', '12', '150.00', '2016-04-24', '汽车加油', '0', '2016-04-24 22:57:54', '2016-04-24 22:58:49', null, null);
+INSERT INTO `finance` VALUES ('00cc47cd1e014f138d9a0704d21481b6', '10700', 'onlycook 韩式304不锈钢筷子勺子环保便携餐具盒旅行', '1', '1', '25.00', now(), '中午带饭', '0', now(), null, null, null);
+INSERT INTO `finance` VALUES ('15c00ceef76842a8a1fe22028f2b6502', '10102', '锅巴', '1', '1', '4.20', '2016-03-15', '苏微快乐锅巴鸡排味', '0', now(), null, null, null);
+INSERT INTO `finance` VALUES ('42e7f3fed6e748e197382ea86cd45087', '10700', 'LOCKLOCK乐扣耐热玻璃饭盒', '1', '1', '119.00', '2016-03-15', '中午带饭', '0', now(), null, null, null);
+INSERT INTO `finance` VALUES ('5c4b8944b74048fca834359079c7d89d', '10700', '公牛（BULL）插座', '1', '3', '47.70', '2016-03-15', '电脑、电动座椅', '0', now(), null, null, null);
+INSERT INTO `finance` VALUES ('82505bb0c4594733897f439d585a78d8', '10700', '便当袋保温袋子', '1', '1', '37.00', '2016-03-15', '中午带饭', '0', now(), null, null, null);
+INSERT INTO `finance` VALUES ('9838c33926c3459291ea5fb1e2ac93a7', '10902', '天猫魔盒', '1', '3', '249.00', '2016-03-15', '天猫魔盒，看电视用', '0', now(), null, null, null);
+INSERT INTO `finance` VALUES ('b5b8471acef049de9a32637ddce41c71', '10300', '加油', '1', '12', '150.00', '2016-04-24', '汽车加油', '0', now(), now()', null, null);
 
 
 CREATE TABLE `t_big_object` (

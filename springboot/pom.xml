@@ -91,12 +91,14 @@
             <version>3.3.7</version>
         </dependency>
 
-        <!-- druid数据库连接池 -->
+
+
+        <!--&lt;!&ndash; druid数据库连接池 &ndash;&gt;
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>1.0.26</version>
-        </dependency>
+        </dependency>-->
         <!-- MySql数据库驱动 -->
         <dependency>
             <groupId>mysql</groupId>
