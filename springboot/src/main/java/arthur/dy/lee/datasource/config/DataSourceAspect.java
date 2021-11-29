@@ -34,9 +34,8 @@ public class DataSourceAspect implements Ordered {
         System.out.println("===============================ds:"+ds.value().toString());
         if (ds == null) {
             DynamicDataSource.setDataSource(DBSourceEnum.TEST1.getValue());
-            this.logger.debug("set datasource is " + DBSourceEnum.TEST1.getValue().toString());
+            this.logger.debug("set datasource is " + DBSourceEnum.TEST1.getValue());
         } else {
-
             DynamicDataSource.setDataSource(ds.value().getValue());
             this.logger.debug("set datasource is " + ds.value().getValue());
         }
