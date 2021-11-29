@@ -1,20 +1,104 @@
 package arthur.dy.lee.datasource.config;
 
+import com.baomidou.mybatisplus.MybatisConfiguration;
+import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
+import com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean;
+import com.github.pagehelper.PageHelper;
+import org.apache.ibatis.plugin.Interceptor;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.type.JdbcType;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 /**
  * 配置多数据源
  */
 @Configuration
 public class DynamicDataSourceConfig {
+
+    @Bean
+    public PaginationInterceptor paginationInterceptor() {
+        PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
+        paginationInterceptor.setDialectType("mysql");
+        // paginationInterceptor.setLimit(你的最大单页限制数量，默认 500 条，小于 0 如 -1 不受限制);
+        //return new PerformanceInterceptor();
+        return paginationInterceptor;
+    }
+
+    /**
+     * 配置mybatis的分页插件pageHelper
+     *
+     * @return
+     */
+    @Bean
+    public PageHelper pageHelper() {
+        PageHelper pageHelper = new PageHelper();
+        Properties properties = new Properties();
+        properties.setProperty("offsetAsPageNum", "true");
+        properties.setProperty("rowBoundsWithCount", "true");
+        properties.setProperty("reasonable", "true");
+        properties.setProperty("dialect",
+                "mysql");    //配置mysql数据库的方言        pageHelper.setProperties(properties);        return pageHelper;    }}
+        return pageHelper;
+    }
+
+    @Bean("sqlSessionFactory")
+    public SqlSessionFactory sqlSessionFactory() throws Exception {
+        // 导入mybatissqlsession配置
+        MybatisSqlSessionFactoryBean sessionFactory = new MybatisSqlSessionFactoryBean();
+        // 指明数据源
+        sessionFactory.setDataSource(dataSource(dataSourceTest1(),
+                dataSourceTest2(), dataSourceTest3(), dataSourceTest4(), dataSourceTest5(), dataSourceTest6(),
+                dataSourceTest7(), dataSourceTest8(), dataSourceTest9(), dataSourceTest10(), dataSourceTest11(),
+                dataSourceTest12(), dataSourceTest13(), dataSourceTest14(), dataSourceTest15(), dataSourceTest16(),
+                dataSourceTest17(), dataSourceTest18(), dataSourceTest19(), dataSourceTest20(), dataSourceTest21(),
+                dataSourceTest22(), dataSourceTest23(), dataSourceTest24(), dataSourceTest25(), dataSourceTest26(),
+                dataSourceTest27(), dataSourceTest28(), dataSourceTest29(), dataSourceTest30(), dataSourceTest31(),
+                dataSourceTest32(), dataSourceTest33(), dataSourceTest34(), dataSourceTest35(), dataSourceTest36(),
+                dataSourceTest37(), dataSourceTest38(), dataSourceTest39(), dataSourceTest40(), dataSourceTest41(),
+                dataSourceTest42(), dataSourceTest43(), dataSourceTest44(), dataSourceTest45(),
+                dataSourceTest46(), dataSourceTest47(), dataSourceTest48(), dataSourceTest49(),
+                dataSourceTest50(), dataSourceTest51(), dataSourceTest52(), dataSourceTest53(),
+                dataSourceTest54(), dataSourceTest55(), dataSourceTest56(), dataSourceTest57(),
+                dataSourceTest58(), dataSourceTest59(), dataSourceTest60(), dataSourceTest61(),
+                dataSourceTest62(), dataSourceTest63(), dataSourceTest64(), dataSourceTest65(),
+                dataSourceTest66(), dataSourceTest67(), dataSourceTest68(), dataSourceTest69(),
+                dataSourceTest70(), dataSourceTest71(), dataSourceTest72(), dataSourceTest73(),
+                dataSourceTest74(), dataSourceTest75(), dataSourceTest76(), dataSourceTest77(),
+                dataSourceTest78(), dataSourceTest79(), dataSourceTest80(), dataSourceTest81(),
+                dataSourceTest82(), dataSourceTest83(), dataSourceTest84(), dataSourceTest85(),
+                dataSourceTest86(), dataSourceTest87(), dataSourceTest88(), dataSourceTest89(),
+                dataSourceTest90(), dataSourceTest91(), dataSourceTest92(), dataSourceTest93(),
+                dataSourceTest94(), dataSourceTest95(), dataSourceTest96(), dataSourceTest97(),
+                dataSourceTest98(), dataSourceTest99(), dataSourceTest100()));
+
+        sessionFactory.setMapperLocations(
+                new PathMatchingResourcePatternResolver().getResources("classpath*:/mapping/**Mapper.xml"));
+        //指明实体扫描(多个package用逗号或者分号分隔)
+        sessionFactory.setTypeAliasesPackage("arthur.dy.lee.model");
+        // 导入mybatis配置
+        MybatisConfiguration configuration = new MybatisConfiguration();
+        configuration.setJdbcTypeForNull(JdbcType.NULL);
+        configuration.setMapUnderscoreToCamelCase(true);
+        configuration.setCacheEnabled(false);
+        sessionFactory.setConfiguration(configuration);
+        // 添加分页功能
+        sessionFactory.setPlugins(new Interceptor[] {
+                paginationInterceptor()
+        });
+        // 导入全局配置
+        //sessionFactory.setGlobalConfig(globalConfiguration());
+        return sessionFactory.getObject();
+    }
 
     @Bean
     @Primary
@@ -528,7 +612,6 @@ public class DynamicDataSourceConfig {
         return DataSourceBuilder.create().build();
     }
 
-
     @Bean
     @ConfigurationProperties("spring.datasource.test60")
     public DataSource dataSourceTest60() {
@@ -588,7 +671,6 @@ public class DynamicDataSourceConfig {
     public DataSource dataSourceTest69() {
         return DataSourceBuilder.create().build();
     }
-
 
     @Bean
     @ConfigurationProperties("spring.datasource.test70")
@@ -650,7 +732,6 @@ public class DynamicDataSourceConfig {
         return DataSourceBuilder.create().build();
     }
 
-
     @Bean
     @ConfigurationProperties("spring.datasource.test80")
     public DataSource dataSourceTest80() {
@@ -710,7 +791,6 @@ public class DynamicDataSourceConfig {
     public DataSource dataSourceTest89() {
         return DataSourceBuilder.create().build();
     }
-
 
     @Bean
     @ConfigurationProperties("spring.datasource.test90")
