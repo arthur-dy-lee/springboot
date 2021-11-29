@@ -1,8 +1,8 @@
 package arthur.dy.lee.service.impl;
 
 import arthur.dy.lee.dao.FinanceMapper;
-import arthur.dy.lee.datasource.config.DataSource;
-import arthur.dy.lee.datasource.config.DataSourceNames;
+import arthur.dy.lee.datasource.config.DBSourceEnum;
+import arthur.dy.lee.datasource.config.DataSourceSwitch;
 import arthur.dy.lee.model.Finance;
 import arthur.dy.lee.model.FinanceExample;
 import arthur.dy.lee.service.FinanceService;
@@ -47,7 +47,7 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByPrimaryKey(id);
     }
 
-    @DataSource(name = DataSourceNames.TEST1)
+    @DataSourceSwitch(DBSourceEnum.TEST1)
     @Override public List<Finance> listFinace(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -62,7 +62,7 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    @DataSource(name = DataSourceNames.TEST2)
+    @DataSourceSwitch(DBSourceEnum.TEST2)
     @Override public List<Finance> listFinace2(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -77,7 +77,7 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    @DataSource(name = DataSourceNames.TEST3)
+    @DataSourceSwitch(DBSourceEnum.TEST3)
     @Override public List<Finance> listFinace3(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -92,7 +92,7 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    @DataSource(name = DataSourceNames.TEST4)
+    @DataSourceSwitch(DBSourceEnum.TEST4)
     @Override public List<Finance> listFinace4(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -109,7 +109,7 @@ public class FinanceServiceImpl implements FinanceService {
 
 
 
-    @DataSource(name = DataSourceNames.TEST5)
+    @DataSourceSwitch(DBSourceEnum.TEST5)
     @Override public List<Finance> listFinace5(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -123,7 +123,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST6)
+    @DataSourceSwitch(DBSourceEnum.TEST6)
     @Override public List<Finance> listFinace6(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -137,7 +137,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST7)
+    @DataSourceSwitch(DBSourceEnum.TEST7)
     @Override public List<Finance> listFinace7(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -151,7 +151,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST8)
+    @DataSourceSwitch(DBSourceEnum.TEST8)
     @Override public List<Finance> listFinace8(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -165,7 +165,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST9)
+    @DataSourceSwitch(DBSourceEnum.TEST9)
     @Override public List<Finance> listFinace9(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -179,7 +179,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST10)
+    @DataSourceSwitch(DBSourceEnum.TEST10)
     @Override public List<Finance> listFinace10(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -194,7 +194,7 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    @DataSource(name = DataSourceNames.TEST12)
+    @DataSourceSwitch(DBSourceEnum.TEST12)
     @Override public List<Finance> listFinace12(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -208,7 +208,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST11)
+    @DataSourceSwitch(DBSourceEnum.TEST11)
     @Override public List<Finance> listFinace11(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -222,7 +222,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST13)
+    @DataSourceSwitch(DBSourceEnum.TEST13)
     @Override public List<Finance> listFinace13(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -236,7 +236,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST14)
+    @DataSourceSwitch(DBSourceEnum.TEST14)
     @Override public List<Finance> listFinace14(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -250,7 +250,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST15)
+    @DataSourceSwitch(DBSourceEnum.TEST15)
     @Override public List<Finance> listFinace15(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -264,7 +264,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST16)
+    @DataSourceSwitch(DBSourceEnum.TEST16)
     @Override public List<Finance> listFinace16(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -278,7 +278,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST17)
+    @DataSourceSwitch(DBSourceEnum.TEST17)
     @Override public List<Finance> listFinace17(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -292,7 +292,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST18)
+    @DataSourceSwitch(DBSourceEnum.TEST18)
     @Override public List<Finance> listFinace18(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -306,7 +306,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST19)
+    @DataSourceSwitch(DBSourceEnum.TEST19)
     @Override public List<Finance> listFinace19(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -320,7 +320,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST20)
+    @DataSourceSwitch(DBSourceEnum.TEST20)
     @Override public List<Finance> listFinace20(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -336,7 +336,7 @@ public class FinanceServiceImpl implements FinanceService {
     }
 
 
-    @DataSource(name = DataSourceNames.TEST21)
+    @DataSourceSwitch(DBSourceEnum.TEST21)
     @Override public List<Finance> listFinace21(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -350,7 +350,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST22)
+    @DataSourceSwitch(DBSourceEnum.TEST22)
     @Override public List<Finance> listFinace22(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -364,7 +364,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST23)
+    @DataSourceSwitch(DBSourceEnum.TEST23)
     @Override public List<Finance> listFinace23(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -378,7 +378,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST24)
+    @DataSourceSwitch(DBSourceEnum.TEST24)
     @Override public List<Finance> listFinace24(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -392,7 +392,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST25)
+    @DataSourceSwitch(DBSourceEnum.TEST25)
     @Override public List<Finance> listFinace25(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -406,7 +406,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST26)
+    @DataSourceSwitch(DBSourceEnum.TEST26)
     @Override public List<Finance> listFinace26(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -420,7 +420,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST27)
+    @DataSourceSwitch(DBSourceEnum.TEST27)
     @Override public List<Finance> listFinace27(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -434,7 +434,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST28)
+    @DataSourceSwitch(DBSourceEnum.TEST28)
     @Override public List<Finance> listFinace28(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -448,7 +448,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST29)
+    @DataSourceSwitch(DBSourceEnum.TEST29)
     @Override public List<Finance> listFinace29(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -462,7 +462,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST30)
+    @DataSourceSwitch(DBSourceEnum.TEST30)
     @Override public List<Finance> listFinace30(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -477,7 +477,7 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    @DataSource(name = DataSourceNames.TEST31)
+    @DataSourceSwitch(DBSourceEnum.TEST31)
     @Override public List<Finance> listFinace31(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -491,7 +491,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST32)
+    @DataSourceSwitch(DBSourceEnum.TEST32)
     @Override public List<Finance> listFinace32(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -505,7 +505,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST33)
+    @DataSourceSwitch(DBSourceEnum.TEST33)
     @Override public List<Finance> listFinace33(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -520,7 +520,7 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    @DataSource(name = DataSourceNames.TEST34)
+    @DataSourceSwitch(DBSourceEnum.TEST34)
     @Override public List<Finance> listFinace34(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -534,7 +534,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST35)
+    @DataSourceSwitch(DBSourceEnum.TEST35)
     @Override public List<Finance> listFinace35(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -548,7 +548,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST36)
+    @DataSourceSwitch(DBSourceEnum.TEST36)
     @Override public List<Finance> listFinace36(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -562,7 +562,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST37)
+    @DataSourceSwitch(DBSourceEnum.TEST37)
     @Override public List<Finance> listFinace37(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -576,7 +576,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST38)
+    @DataSourceSwitch(DBSourceEnum.TEST38)
     @Override public List<Finance> listFinace38(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -590,7 +590,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST39)
+    @DataSourceSwitch(DBSourceEnum.TEST39)
     @Override public List<Finance> listFinace39(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -604,7 +604,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST40)
+    @DataSourceSwitch(DBSourceEnum.TEST40)
     @Override public List<Finance> listFinace40(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -618,7 +618,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST41)
+    @DataSourceSwitch(DBSourceEnum.TEST41)
     @Override public List<Finance> listFinace41(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -632,7 +632,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST42)
+    @DataSourceSwitch(DBSourceEnum.TEST42)
     @Override public List<Finance> listFinace42(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -646,7 +646,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST43)
+    @DataSourceSwitch(DBSourceEnum.TEST43)
     @Override public List<Finance> listFinace43(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -660,7 +660,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST44)
+    @DataSourceSwitch(DBSourceEnum.TEST44)
     @Override public List<Finance> listFinace44(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -674,7 +674,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST45)
+    @DataSourceSwitch(DBSourceEnum.TEST45)
     @Override public List<Finance> listFinace45(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -688,7 +688,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST46)
+    @DataSourceSwitch(DBSourceEnum.TEST46)
     @Override public List<Finance> listFinace46(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -702,7 +702,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST47)
+    @DataSourceSwitch(DBSourceEnum.TEST47)
     @Override public List<Finance> listFinace47(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -716,7 +716,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST48)
+    @DataSourceSwitch(DBSourceEnum.TEST48)
     @Override public List<Finance> listFinace48(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -730,7 +730,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST49)
+    @DataSourceSwitch(DBSourceEnum.TEST49)
     @Override public List<Finance> listFinace49(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -745,7 +745,7 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    @DataSource(name = DataSourceNames.TEST50)
+    @DataSourceSwitch(DBSourceEnum.TEST50)
     @Override public List<Finance> listFinace50(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -759,7 +759,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST51)
+    @DataSourceSwitch(DBSourceEnum.TEST51)
     @Override public List<Finance> listFinace51(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -773,7 +773,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST52)
+    @DataSourceSwitch(DBSourceEnum.TEST52)
     @Override public List<Finance> listFinace52(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -787,7 +787,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST53)
+    @DataSourceSwitch(DBSourceEnum.TEST53)
     @Override public List<Finance> listFinace53(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -801,7 +801,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST54)
+    @DataSourceSwitch(DBSourceEnum.TEST54)
     @Override public List<Finance> listFinace54(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -815,7 +815,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST55)
+    @DataSourceSwitch(DBSourceEnum.TEST55)
     @Override public List<Finance> listFinace55(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -829,7 +829,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST56)
+    @DataSourceSwitch(DBSourceEnum.TEST56)
     @Override public List<Finance> listFinace56(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -843,7 +843,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST57)
+    @DataSourceSwitch(DBSourceEnum.TEST57)
     @Override public List<Finance> listFinace57(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -857,7 +857,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST58)
+    @DataSourceSwitch(DBSourceEnum.TEST58)
     @Override public List<Finance> listFinace58(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -871,7 +871,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST59)
+    @DataSourceSwitch(DBSourceEnum.TEST59)
     @Override public List<Finance> listFinace59(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -886,7 +886,7 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    @DataSource(name = DataSourceNames.TEST60)
+    @DataSourceSwitch(DBSourceEnum.TEST60)
     @Override public List<Finance> listFinace60(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -900,7 +900,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST61)
+    @DataSourceSwitch(DBSourceEnum.TEST61)
     @Override public List<Finance> listFinace61(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -914,7 +914,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST62)
+    @DataSourceSwitch(DBSourceEnum.TEST62)
     @Override public List<Finance> listFinace62(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -928,7 +928,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST63)
+    @DataSourceSwitch(DBSourceEnum.TEST63)
     @Override public List<Finance> listFinace63(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -942,7 +942,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST64)
+    @DataSourceSwitch(DBSourceEnum.TEST64)
     @Override public List<Finance> listFinace64(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -956,7 +956,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST65)
+    @DataSourceSwitch(DBSourceEnum.TEST65)
     @Override public List<Finance> listFinace65(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -970,7 +970,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST66)
+    @DataSourceSwitch(DBSourceEnum.TEST66)
     @Override public List<Finance> listFinace66(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -984,7 +984,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST67)
+    @DataSourceSwitch(DBSourceEnum.TEST67)
     @Override public List<Finance> listFinace67(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -998,7 +998,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST68)
+    @DataSourceSwitch(DBSourceEnum.TEST68)
     @Override public List<Finance> listFinace68(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1012,7 +1012,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST69)
+    @DataSourceSwitch(DBSourceEnum.TEST69)
     @Override public List<Finance> listFinace69(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1027,7 +1027,7 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    @DataSource(name = DataSourceNames.TEST70)
+    @DataSourceSwitch(DBSourceEnum.TEST70)
     @Override public List<Finance> listFinace70(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1041,7 +1041,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST71)
+    @DataSourceSwitch(DBSourceEnum.TEST71)
     @Override public List<Finance> listFinace71(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1055,7 +1055,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST72)
+    @DataSourceSwitch(DBSourceEnum.TEST72)
     @Override public List<Finance> listFinace72(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1069,7 +1069,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST73)
+    @DataSourceSwitch(DBSourceEnum.TEST73)
     @Override public List<Finance> listFinace73(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1083,7 +1083,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST74)
+    @DataSourceSwitch(DBSourceEnum.TEST74)
     @Override public List<Finance> listFinace74(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1097,7 +1097,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST75)
+    @DataSourceSwitch(DBSourceEnum.TEST75)
     @Override public List<Finance> listFinace75(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1111,7 +1111,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST76)
+    @DataSourceSwitch(DBSourceEnum.TEST76)
     @Override public List<Finance> listFinace76(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1125,7 +1125,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST77)
+    @DataSourceSwitch(DBSourceEnum.TEST77)
     @Override public List<Finance> listFinace77(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1139,7 +1139,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST78)
+    @DataSourceSwitch(DBSourceEnum.TEST78)
     @Override public List<Finance> listFinace78(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1153,7 +1153,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST79)
+    @DataSourceSwitch(DBSourceEnum.TEST79)
     @Override public List<Finance> listFinace79(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1168,7 +1168,7 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    @DataSource(name = DataSourceNames.TEST80)
+    @DataSourceSwitch(DBSourceEnum.TEST80)
     @Override public List<Finance> listFinace80(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1182,7 +1182,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST81)
+    @DataSourceSwitch(DBSourceEnum.TEST81)
     @Override public List<Finance> listFinace81(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1196,7 +1196,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST82)
+    @DataSourceSwitch(DBSourceEnum.TEST82)
     @Override public List<Finance> listFinace82(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1210,7 +1210,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST83)
+    @DataSourceSwitch(DBSourceEnum.TEST83)
     @Override public List<Finance> listFinace83(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1224,7 +1224,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST84)
+    @DataSourceSwitch(DBSourceEnum.TEST84)
     @Override public List<Finance> listFinace84(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1238,7 +1238,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST85)
+    @DataSourceSwitch(DBSourceEnum.TEST85)
     @Override public List<Finance> listFinace85(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1252,7 +1252,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST86)
+    @DataSourceSwitch(DBSourceEnum.TEST86)
     @Override public List<Finance> listFinace86(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1266,7 +1266,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST87)
+    @DataSourceSwitch(DBSourceEnum.TEST87)
     @Override public List<Finance> listFinace87(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1280,7 +1280,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST88)
+    @DataSourceSwitch(DBSourceEnum.TEST88)
     @Override public List<Finance> listFinace88(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1294,7 +1294,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST89)
+    @DataSourceSwitch(DBSourceEnum.TEST89)
     @Override public List<Finance> listFinace89(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1309,7 +1309,7 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    @DataSource(name = DataSourceNames.TEST90)
+    @DataSourceSwitch(DBSourceEnum.TEST90)
     @Override public List<Finance> listFinace90(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1323,7 +1323,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST91)
+    @DataSourceSwitch(DBSourceEnum.TEST91)
     @Override public List<Finance> listFinace91(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1337,7 +1337,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST92)
+    @DataSourceSwitch(DBSourceEnum.TEST92)
     @Override public List<Finance> listFinace92(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1351,7 +1351,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST93)
+    @DataSourceSwitch(DBSourceEnum.TEST93)
     @Override public List<Finance> listFinace93(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1365,7 +1365,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST94)
+    @DataSourceSwitch(DBSourceEnum.TEST94)
     @Override public List<Finance> listFinace94(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1379,7 +1379,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST95)
+    @DataSourceSwitch(DBSourceEnum.TEST95)
     @Override public List<Finance> listFinace95(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1393,7 +1393,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST96)
+    @DataSourceSwitch(DBSourceEnum.TEST96)
     @Override public List<Finance> listFinace96(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1407,7 +1407,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST97)
+    @DataSourceSwitch(DBSourceEnum.TEST97)
     @Override public List<Finance> listFinace97(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1421,7 +1421,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST98)
+    @DataSourceSwitch(DBSourceEnum.TEST98)
     @Override public List<Finance> listFinace98(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1435,7 +1435,7 @@ public class FinanceServiceImpl implements FinanceService {
         //this.synTask("financeHandler", "aa");
         return this.mapper.selectByExample(example);
     }
-    @DataSource(name = DataSourceNames.TEST99)
+    @DataSourceSwitch(DBSourceEnum.TEST99)
     @Override public List<Finance> listFinace99(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
@@ -1450,7 +1450,7 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    @DataSource(name = DataSourceNames.TEST100)
+    @DataSourceSwitch(DBSourceEnum.TEST100)
     @Override public List<Finance> listFinace100(String consumerproject, String consumer) throws Exception {
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();

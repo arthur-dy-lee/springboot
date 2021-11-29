@@ -12,6 +12,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface DataSource {
-    String name() default "";
+public @interface DataSourceSwitch {
+    DBSourceEnum value() default DBSourceEnum.TEST1;
 }

@@ -2621,7 +2621,7 @@ INSERT INTO `finance` VALUES ('b5b8471acef049de9a32637ddce41c71', '10300', 'åŠ æ
 
 
 create database test80;
-grant select,insert,delete,update,create,drop, alter, index, create view, show view on test.* to lee@"%";
+grant select,insert,delete,update,create,drop, alter, index, create view, show view on test80.* to lee@"%";
 use test80;
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `finance`;

@@ -20,7 +20,7 @@ import java.lang.reflect.Method;
 public class DataSourceAspect implements Ordered {
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Pointcut("@annotation(arthur.dy.lee.datasource.config.DataSource)")
+    @Pointcut("@annotation(arthur.dy.lee.datasource.config.DataSourceSwitch)")
     public void dataSourcePointCut() {
 
     }
@@ -30,14 +30,15 @@ public class DataSourceAspect implements Ordered {
         MethodSignature signature = (MethodSignature) point.getSignature();
         Method method = signature.getMethod();
 
-        DataSource ds = method.getAnnotation(DataSource.class);
-        System.out.println("===============================ds:"+ds.name());
+        DataSourceSwitch ds = method.getAnnotation(DataSourceSwitch.class);
+        System.out.println("===============================ds:"+ds.value().toString());
         if (ds == null) {
-            DynamicDataSource.setDataSource(DataSourceNames.TEST1);
-            this.logger.debug("set datasource is " + DataSourceNames.TEST1);
+            DynamicDataSource.setDataSource(DBSourceEnum.TEST1.getValue());
+            this.logger.debug("set datasource is " + DBSourceEnum.TEST1.getValue().toString());
         } else {
-            DynamicDataSource.setDataSource(ds.name());
-            this.logger.debug("set datasource is " + ds.name());
+
+            DynamicDataSource.setDataSource(ds.value().getValue());
+            this.logger.debug("set datasource is " + ds.value().getValue());
         }
 
         try {
