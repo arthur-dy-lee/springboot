@@ -65,9 +65,9 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
                                         BeanDefinitionRegistry beanDefinitionRegistry) {
         // 获取主数据源配置
         Map config, defauleDataSourceProperties;
-        defauleDataSourceProperties = binder.bind("spring.datasource.master", Map.class).get();
+        defauleDataSourceProperties = binder.bind("spring.datasource.default", Map.class).get();
         // 获取数据源类型
-        String typeStr = evn.getProperty("spring.datasource.master.type");
+        String typeStr = evn.getProperty("spring.datasource.default.type");
         // 获取数据源类型
         Class<? extends DataSource> clazz = getDataSourceType(typeStr);
         // 绑定默认数据源参数 也就是主数据源
@@ -76,7 +76,7 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
         logger.info("注册默认数据源成功");
 
         // 获取其他数据源配置
-        List<Map> configs = binder.bind("spring.datasource.cluster", Bindable.listOf(Map.class)).get();
+        List<Map> configs = binder.bind("spring.datasource.multi", Bindable.listOf(Map.class)).get();
         // 遍历从数据源
         for (int i = 0; i < configs.size(); i++) {
             config = configs.get(i);

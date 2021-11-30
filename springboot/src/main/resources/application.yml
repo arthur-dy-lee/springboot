@@ -16,7 +16,7 @@ spring:
     port: 6379
     passsword: 123456a?
   datasource:
-    master:
+    default:
       username: lee
       password: eee
       url: jdbc:mysql://localhost:3306/test1?useUnicode=true&characterEncoding=UTF-8&usessl=false&servertimezone=GMT%2B8
@@ -24,7 +24,7 @@ spring:
       openMulti: true
       type: com.zaxxer.hikari.HikariDataSource
       idle-timeout: 30000
-    cluster:
+    multi:
       - key: test2
         password: eee
         url: jdbc:mysql://localhost:3306/test2?useUnicode=true&characterEncoding=UTF-8&usessl=false&servertimezone=GMT%2B8

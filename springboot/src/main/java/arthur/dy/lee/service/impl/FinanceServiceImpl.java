@@ -6,9 +6,9 @@ import arthur.dy.lee.model.Finance;
 import arthur.dy.lee.model.FinanceExample;
 import arthur.dy.lee.service.FinanceService;
 import com.xxl.job.core.biz.AdminBiz;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.UUID;
@@ -48,7 +48,9 @@ public class FinanceServiceImpl implements FinanceService {
 
 //    @DataSourceSwitch(DBSourceEnum.TEST1)
     @Override public List<Finance> listFinace(String dataSource, String consumerproject, String consumer) throws Exception {
-        DataSourceContext.setRouterKey(dataSource);
+        if (StringUtils.isNotEmpty(dataSource)) {
+            DataSourceContext.setRouterKey(dataSource);
+        }
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
         if (!StringUtils.isEmpty(consumer)) {
