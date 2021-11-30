@@ -15,11 +15,11 @@ public interface FinanceService {
 
     Finance getFinace(String id);
 
-    List<Finance> listFinace(String consumerproject, String consumer) throws Exception;
+    List<Finance> listFinace(String dataSource, String consumerproject, String consumer) throws Exception;
 
-    List<Finance> listFinace2(String consumerproject, String consumer) throws Exception;
+    List<Finance> listFinace2(String dataSource, String consumerproject, String consumer) throws Exception;
 
-    List<Finance> listFinace3(String consumerproject, String consumer) throws Exception;
+    List<Finance> listFinace3(String dataSource, String consumerproject, String consumer) throws Exception;
 
-    List<Finance> listFinace4(String consumerproject, String consumer) throws Exception;
+    List<Finance> listFinace4(String dataSource, String consumerproject, String consumer) throws Exception;
 }

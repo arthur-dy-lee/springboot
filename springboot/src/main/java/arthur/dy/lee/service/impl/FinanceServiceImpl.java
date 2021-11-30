@@ -1,8 +1,7 @@
 package arthur.dy.lee.service.impl;
 
 import arthur.dy.lee.dao.FinanceMapper;
-import arthur.dy.lee.datasource.config.DBSourceEnum;
-import arthur.dy.lee.datasource.config.DataSourceSwitch;
+import arthur.dy.lee.datasource.config2.DataSourceContext;
 import arthur.dy.lee.model.Finance;
 import arthur.dy.lee.model.FinanceExample;
 import arthur.dy.lee.service.FinanceService;
@@ -47,8 +46,9 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByPrimaryKey(id);
     }
 
-    @DataSourceSwitch(DBSourceEnum.TEST1)
-    @Override public List<Finance> listFinace(String consumerproject, String consumer) throws Exception {
+//    @DataSourceSwitch(DBSourceEnum.TEST1)
+    @Override public List<Finance> listFinace(String dataSource, String consumerproject, String consumer) throws Exception {
+        DataSourceContext.setRouterKey(dataSource);
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
         if (!StringUtils.isEmpty(consumer)) {
@@ -62,8 +62,9 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    @DataSourceSwitch(DBSourceEnum.TEST2)
-    @Override public List<Finance> listFinace2(String consumerproject, String consumer) throws Exception {
+//    @DataSourceSwitch(DBSourceEnum.TEST2)
+    @Override public List<Finance> listFinace2(String dataSource, String consumerproject, String consumer) throws Exception {
+        DataSourceContext.setRouterKey(dataSource);
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
         if (!StringUtils.isEmpty(consumer)) {
@@ -77,8 +78,9 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    @DataSourceSwitch(DBSourceEnum.TEST3)
-    @Override public List<Finance> listFinace3(String consumerproject, String consumer) throws Exception {
+//    @DataSourceSwitch(DBSourceEnum.TEST3)
+    @Override public List<Finance> listFinace3(String dataSource, String consumerproject, String consumer) throws Exception {
+        DataSourceContext.setRouterKey(dataSource);
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
         if (!StringUtils.isEmpty(consumer)) {
@@ -92,8 +94,9 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    @DataSourceSwitch(DBSourceEnum.TEST4)
-    @Override public List<Finance> listFinace4(String consumerproject, String consumer) throws Exception {
+//    @DataSourceSwitch(DBSourceEnum.TEST4)
+    @Override public List<Finance> listFinace4(String dataSource, String consumerproject, String consumer) throws Exception {
+        DataSourceContext.setRouterKey(dataSource);
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
         if (!StringUtils.isEmpty(consumer)) {
