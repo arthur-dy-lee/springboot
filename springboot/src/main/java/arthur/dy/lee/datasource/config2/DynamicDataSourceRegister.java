@@ -47,7 +47,7 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
     /**
      * 存储我们注册的数据源
      */
-    private Map<String, DataSource> customDataSources = new HashMap<String, DataSource>();
+    private Map<String, DataSource> customDataSourceMap = new HashMap<String, DataSource>();
 
     /**
      * 参数绑定工具 springboot2.0 新推出
@@ -72,7 +72,7 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
         Class<? extends DataSource> clazz = getDataSourceType(typeStr);
         // 绑定默认数据源参数 也就是主数据源
         DataSource consumerDatasource, defaultDatasource = bind(clazz, defauleDataSourceProperties);
-        DataSourceContext.dataSourceIds.add("master");
+        DataSourceContext.dataSourceIds.add("default");
         logger.info("注册默认数据源成功");
 
         // 获取其他数据源配置
@@ -86,7 +86,7 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
             consumerDatasource = bind(clazz, defauleDataSourceProperties);
             // 获取数据源的key，以便通过该key可以定位到数据源
             String key = config.get("key").toString();
-            customDataSources.put(key, consumerDatasource);
+            customDataSourceMap.put(key, consumerDatasource);
             // 数据源上下文，用于管理数据源与记录已经注册的数据源key
             DataSourceContext.dataSourceIds.add(key);
             logger.info("注册数据源{}成功", key);
@@ -100,10 +100,10 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
         // 添加默认数据源，避免key不存在的情况没有数据源可用
         mpv.add("defaultTargetDataSource", defaultDatasource);
         // 添加其他数据源
-        mpv.add("targetDataSources", customDataSources);
+        mpv.add("targetDataSources", customDataSourceMap);
         // 将该bean注册为datasource，不使用springboot自动生成的datasource
         beanDefinitionRegistry.registerBeanDefinition("datasource", define);
-        logger.info("注册数据源成功，一共注册{}个数据源", customDataSources.keySet().size() + 1);
+        logger.info("注册数据源成功，一共注册{}个数据源", customDataSourceMap.keySet().size() + 1);
     }
 
     /**

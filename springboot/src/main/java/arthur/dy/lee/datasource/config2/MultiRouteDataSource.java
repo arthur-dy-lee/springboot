@@ -4,10 +4,10 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 /**
  * DataSource路由类
- * <p>
+ *
  * 重写的函数决定了最后选择的DataSource
  *
- * @author Lynch
+ * @author arthur
  */
 public class MultiRouteDataSource extends AbstractRoutingDataSource {
 
