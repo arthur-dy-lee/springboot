@@ -93,6 +93,14 @@ public class FinanceServiceImpl implements FinanceService {
         return list;
     }
 
+    /**
+     * 通过注解 DataSourceSwitch，可以在AOP中切换数据源，但在方法入参中，数据源的名称必须是dataSourceName，而且是第1位的参数
+     * @param dataSourceName
+     * @param consumerproject
+     * @param consumer
+     * @return
+     * @throws Exception
+     */
     @DataSourceSwitch
     @Override public List<Finance> listFinace3(String dataSourceName, String consumerproject, String consumer)
             throws Exception {
@@ -110,7 +118,14 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-
+    /**
+     * 可以自定义sql，把sql放到数据库中，这样，数据源和sql都可以变化配置的，在运行时动态指定就可以了。
+     * @param dataSourceName
+     * @param consumerproject
+     * @param consumer
+     * @return
+     * @throws Exception
+     */
     @Override public List<Finance> listFinace4(String dataSourceName, String consumerproject, String consumer)
             throws Exception {
         if (!DataSourceContext.containsDataSource(dataSourceName)) {
