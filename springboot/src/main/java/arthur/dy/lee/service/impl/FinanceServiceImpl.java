@@ -10,6 +10,8 @@ import arthur.dy.lee.service.FinanceService;
 import com.xxl.job.core.biz.AdminBiz;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -108,25 +110,24 @@ public class FinanceServiceImpl implements FinanceService {
         return this.mapper.selectByExample(example);
     }
 
-    //    @DataSourceSwitch(DBSourceEnum.TEST4)
+
     @Override public List<Finance> listFinace4(String dataSourceName, String consumerproject, String consumer)
             throws Exception {
         if (!DataSourceContext.containsDataSource(dataSourceName)) {
             databaseSourceService.addDataSource(dataSourceName);
         }
         DataSourceContext.setRouterKey(dataSourceName);
-        FinanceExample example = new FinanceExample();
-        FinanceExample.Criteria criteria = example.createCriteria();
-        if (!StringUtils.isEmpty(consumer)) {
-            criteria.andConsumerprojectLike("%" + consumerproject + "%");
-        }
-        if (!StringUtils.isEmpty(consumer)) {
-            criteria.andConsumerLike("%" + consumer + "%");
-        }
 
-        List<Finance> list = this.mapper.selectByExample(example);
+        String sql = "select * from finance";
+        List<Finance> list =  jdbcTemplate.query(sql, new BeanPropertyRowMapper(Finance.class));
+        System.out.println("------");
         DataSourceContext.clearRouterKey();
         return list;
     }
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
+
 
 }
