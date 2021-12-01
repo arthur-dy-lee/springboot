@@ -2,7 +2,7 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration >
     <!-- 设置mysql驱动路径 -->
-    <classPathEntry location="D:\ProgramData\Extra_jar_repo\mysql-jar\mysql-connector-java-5.1.30.jar" />
+    <classPathEntry location="/Users/sh07093ml/software/repo/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar" />
 
     <!-- 此处指定生成针对MyBatis3的DAO -->
     <context id="context1"  targetRuntime="MyBatis3">
@@ -20,9 +20,9 @@
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
         <!-- 分页插件 -->
         <!-- 在example类中增 page 属性，并在mapper.xml的查询中加入page !=null 时的查询 -->
-        <!-- <plugin type="org.mybatis.generator.plugins.MySQLPagerPlugin" /> -->
+<!--         <plugin type="org.mybatis.generator.plugins.MySQLPagerPlugin" />-->
         <!-- 在example类中增 offset和limit属性，并在mapper.xml的查询中加入limit ${offset} , ${limit} 提供在offset和limit>0时的查询 -->
-        <plugin type="org.mybatis.generator.plugins.MySQLPaginationPlugin2"></plugin>
+<!--        <plugin type="org.mybatis.generator.plugins.MySQLPaginationPlugin2"></plugin>-->
         <!--<plugin type="com.xxg.mybatis.plugins.MySQLLimitPlugin"></plugin>-->
         <commentGenerator>
             <!-- <property name="suppressDate" value="true"/> -->
@@ -31,7 +31,7 @@
         </commentGenerator>
 
         <!-- jdbc连接信息 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver"  connectionURL="jdbc:mysql://192.168.3.102:3306/lee" userId="lee" password="eee" />
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"  connectionURL="jdbc:mysql://127.0.0.1:3306/lee" userId="lee" password="eee" />
         <!-- 生成bean和example对象 -->
         <javaModelGenerator targetPackage="arthur.dy.lee.model" targetProject="src/main/java" />
         <!-- 生成mapper.xml类 -->
@@ -42,7 +42,7 @@
         <!-- <table schema="" 	tableName="t_activity_log" domainObjectName="ActivityLog"></table>
         <table schema="" 	tableName="sys_`tree" domainObjectName="SysTree"></table> -->
 
-        <table schema="" 	tableName="t_big_object" domainObjectName="BigObject">
+        <table schema="" 	tableName="database_source" domainObjectName="DatabaseSource">
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
         <!--<table schema="" 	tableName="finance_tree" domainObjectName="FinanceTree"></table>-->
