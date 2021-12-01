@@ -2,6 +2,7 @@ package arthur.dy.lee.service.impl;
 
 import arthur.dy.lee.dao.FinanceMapper;
 import arthur.dy.lee.datasource.config2.DataSourceContext;
+import arthur.dy.lee.datasource.config2.DataSourceSwitch;
 import arthur.dy.lee.model.Finance;
 import arthur.dy.lee.model.FinanceExample;
 import arthur.dy.lee.service.DatabaseSourceService;
@@ -50,7 +51,7 @@ public class FinanceServiceImpl implements FinanceService {
     @Autowired private DatabaseSourceService databaseSourceService;
 
     //    @DataSourceSwitch(DBSourceEnum.TEST1)
-    @Override public List<Finance> listFinace(String dataSource, String consumerproject, String consumer)
+    @Override public List<Finance>  listFinace(String dataSource, String consumerproject, String consumer)
             throws Exception {
         if (!DataSourceContext.containsDataSource(dataSource)) {
             databaseSourceService.addDataSource(dataSource);
@@ -71,14 +72,12 @@ public class FinanceServiceImpl implements FinanceService {
 
     }
 
-    //    @DataSourceSwitch(DBSourceEnum.TEST2)
-    @Override public List<Finance> listFinace2(String dataSource, String consumerproject, String consumer)
-            throws Exception {
-        if (!DataSourceContext.containsDataSource(dataSource)) {
-            databaseSourceService.addDataSource(dataSource);
-        }
-        DataSourceContext.setRouterKey(dataSource);
 
+    @Override public List<Finance> listFinace2(String dataSourceName, String consumerproject, String consumer)
+            throws Exception {
+        if (!DataSourceContext.containsDataSource(dataSourceName)) {
+            databaseSourceService.addDataSource(dataSourceName);
+        }
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
         if (!StringUtils.isEmpty(consumer)) {
@@ -87,15 +86,15 @@ public class FinanceServiceImpl implements FinanceService {
         if (!StringUtils.isEmpty(consumer)) {
             criteria.andConsumerLike("%" + consumer + "%");
         }
-
-        //this.synTask("financeHandler", "aa");
-        return this.mapper.selectByExample(example);
+        List<Finance> list = this.mapper.selectByExample(example);
+        DataSourceContext.clearRouterKey();
+        return list;
     }
 
-    //    @DataSourceSwitch(DBSourceEnum.TEST3)
-    @Override public List<Finance> listFinace3(String dataSource, String consumerproject, String consumer)
+    @DataSourceSwitch
+    @Override public List<Finance> listFinace3(String dataSourceName, String consumerproject, String consumer)
             throws Exception {
-        DataSourceContext.setRouterKey(dataSource);
+
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
         if (!StringUtils.isEmpty(consumer)) {
@@ -105,14 +104,17 @@ public class FinanceServiceImpl implements FinanceService {
             criteria.andConsumerLike("%" + consumer + "%");
         }
 
-        //this.synTask("financeHandler", "aa");
+
         return this.mapper.selectByExample(example);
     }
 
     //    @DataSourceSwitch(DBSourceEnum.TEST4)
-    @Override public List<Finance> listFinace4(String dataSource, String consumerproject, String consumer)
+    @Override public List<Finance> listFinace4(String dataSourceName, String consumerproject, String consumer)
             throws Exception {
-        DataSourceContext.setRouterKey(dataSource);
+        if (!DataSourceContext.containsDataSource(dataSourceName)) {
+            databaseSourceService.addDataSource(dataSourceName);
+        }
+        DataSourceContext.setRouterKey(dataSourceName);
         FinanceExample example = new FinanceExample();
         FinanceExample.Criteria criteria = example.createCriteria();
         if (!StringUtils.isEmpty(consumer)) {
@@ -122,8 +124,9 @@ public class FinanceServiceImpl implements FinanceService {
             criteria.andConsumerLike("%" + consumer + "%");
         }
 
-        //this.synTask("financeHandler", "aa");
-        return this.mapper.selectByExample(example);
+        List<Finance> list = this.mapper.selectByExample(example);
+        DataSourceContext.clearRouterKey();
+        return list;
     }
 
 }

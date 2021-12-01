@@ -60,4 +60,18 @@ public class FinanceController {
 
         return ret.toString();
     }
+
+    @RequestMapping("/listFinance3")
+    public String listFinance3(@RequestParam(name = "ds") String ds) throws Exception {
+
+
+        List<Finance> list = this.service.listFinace3(ds, null, null);
+        StringBuilder ret = new StringBuilder(500);
+        if (!CollectionUtils.isEmpty(list)) {
+            list.forEach(
+                    e -> ret.append(e.getConsumer() + "/n," + e.getConsumerproject() + "/n; " + e.getCreatedate()));
+        }
+
+        return ret.toString();
+    }
 }

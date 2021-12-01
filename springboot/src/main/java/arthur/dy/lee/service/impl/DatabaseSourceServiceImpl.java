@@ -63,7 +63,7 @@ public class DatabaseSourceServiceImpl implements DatabaseSourceService, BeanFac
 
             Map<Object, Object> targetDataSources = CollectionUtils.newHashMap(resolvedDataSourceMap.size() + 1);
             resolvedDataSourceMap.forEach((key, value) -> {
-                targetDataSources.put(key, dataSource);
+                targetDataSources.put(key, value);
             });
             targetDataSources.put(datasourceName, dataSource);
             define.setTargetDataSources(targetDataSources);
