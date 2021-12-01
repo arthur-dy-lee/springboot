@@ -72,7 +72,7 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
         Class<? extends DataSource> clazz = getDataSourceType(typeStr);
         // 绑定默认数据源参数 也就是主数据源
         DataSource consumerDatasource, defaultDatasource = bind(clazz, defauleDataSourceProperties);
-        DataSourceContext.dataSourceIds.add("default");
+        DataSourceContext.dataSourceNameList.add("default");
         logger.info("注册默认数据源成功");
 
         // 获取其他数据源配置
@@ -88,7 +88,7 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
             String key = config.get("key").toString();
             customDataSourceMap.put(key, consumerDatasource);
             // 数据源上下文，用于管理数据源与记录已经注册的数据源key
-            DataSourceContext.dataSourceIds.add(key);
+            DataSourceContext.dataSourceNameList.add(key);
             logger.info("注册数据源{}成功", key);
         }
         // bean定义类

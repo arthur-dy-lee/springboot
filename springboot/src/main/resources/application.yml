@@ -19,30 +19,19 @@ spring:
     default:
       username: lee
       password: eee
-      url: jdbc:mysql://localhost:3306/test1?useUnicode=true&characterEncoding=UTF-8&usessl=false&servertimezone=GMT%2B8
+      url: jdbc:mysql://localhost:3306/lee?useUnicode=true&characterEncoding=UTF-8&usessl=false&servertimezone=GMT%2B8
       driver-class-name: com.mysql.cj.jdbc.Driver
       openMulti: true
       type: com.zaxxer.hikari.HikariDataSource
       idle-timeout: 30000
     multi:
-      - key: test2
+      - key: test1
         password: eee
-        url: jdbc:mysql://localhost:3306/test2?useUnicode=true&characterEncoding=UTF-8&usessl=false&servertimezone=GMT%2B8
+        url: jdbc:mysql://localhost:3306/test1?useUnicode=true&characterEncoding=UTF-8&usessl=false&servertimezone=GMT%2B8
         idle-timeout: 20000
         driver-class-name: com.mysql.cj.jdbc.Driver
         type: com.zaxxer.hikari.HikariDataSource
         username: lee
-      - key: test3
-        password: eee
-        url: jdbc:mysql://localhost:3306/test3?useUnicode=true&characterEncoding=UTF-8&usessl=false&servertimezone=GMT%2B8
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        username: lee
-      - key: test4
-        password: eee
-        url: jdbc:mysql://localhost:3306/test4?useUnicode=true&characterEncoding=UTF-8&usessl=false&servertimezone=GMT%2B8
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        username: lee
-        type: com.zaxxer.hikari.HikariDataSource
 
 #mybatis-plus:
 #  mapper-locations: classpath*:mapping/*Mapper.xml

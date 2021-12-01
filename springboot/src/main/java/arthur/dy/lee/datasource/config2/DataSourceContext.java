@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * 数据源上下文
- * <p>
+ *
  * 数据源上下文的作用：用户记录当前线程使用的数据源的key是什么，以及记录所有注册成功的数据源的key的集合。
  *
  * @author arthur
@@ -20,7 +20,8 @@ public class DataSourceContext {
     private static final ThreadLocal<String> contextHolder = new ThreadLocal<String>();
 
     //存储已经注册的数据源的key
-    public static List<String> dataSourceIds = new ArrayList<>();
+    public static List<String> dataSourceNameList = new ArrayList<>();
+
 
     public static void setRouterKey(String routerKey) {
         log.debug("切换至{}数据源", routerKey);
@@ -43,10 +44,10 @@ public class DataSourceContext {
     /**
      * 判断指定DataSrouce当前是否存在
      *
-     * @param dataSourceId
+     * @param dataSourceName
      */
-    public static boolean containsDataSource(String dataSourceId) {
-        return dataSourceIds.contains(dataSourceId);
+    public static boolean containsDataSource(String dataSourceName) {
+        return dataSourceNameList.contains(dataSourceName);
     }
 
 }
