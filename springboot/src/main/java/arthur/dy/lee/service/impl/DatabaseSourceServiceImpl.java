@@ -57,7 +57,7 @@ public class DatabaseSourceServiceImpl implements DatabaseSourceService, BeanFac
             dataSource.setJdbcUrl(databaseSource.getUrl());
             dataSource.setUsername(databaseSource.getUsername());
             dataSource.setPassword(databaseSource.getPassword());
-            dataSource.getConnection();
+            //TODO 连接池信息配置
             MultiRouteDataSource define = (MultiRouteDataSource) beanFactory.getBean("datasource");
             Map<Object, DataSource> resolvedDataSourceMap = define.getResolvedDataSources();
 
