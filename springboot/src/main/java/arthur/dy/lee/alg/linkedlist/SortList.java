@@ -83,7 +83,7 @@ public class SortList {
     }
 
     public static void main(String[] args) {
-        ListNode node = GenListNode.get();
+        ListNode node = GenListNode.genNode3();
 
         SortList sortList = new SortList();
         ListNode result = sortList.sortList(node);

@@ -56,7 +56,7 @@ public class InsertionSortList {
     }
 
     public static void main(String[] args) {
-        ListNode node = GenListNode.get();
+        ListNode node = GenListNode.genNode3();
         ListNode ret = InsertionSortList.insertionSortList(node);
         GenListNode.printListNode(ret);
     }
