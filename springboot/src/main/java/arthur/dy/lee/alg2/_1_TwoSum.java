@@ -4,6 +4,9 @@ import com.alibaba.druid.support.json.JSONUtils;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @TODO
@@ -32,5 +35,14 @@ public class _1_TwoSum {
         System.out.println(JSONUtils.toJSONString(twoSum(nums, 6)));
         int[] nums2 = { 2, 7, 11, 15 };
         System.out.println(JSONUtils.toJSONString(twoSum(nums2, 9)));
+        ReentrantLock reentrantLock;
+        ThreadLocal threadLocal = new ThreadLocal<>();
+
+        threadLocal.get();
+        threadLocal.set("aba");
+
+        ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue(16);
+        LinkedBlockingQueue linkedBlockingQueue = new LinkedBlockingQueue();
+
     }
 }

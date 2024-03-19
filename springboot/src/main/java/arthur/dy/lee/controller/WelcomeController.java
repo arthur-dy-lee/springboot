@@ -18,11 +18,23 @@ public class WelcomeController {
     @Value("${welcome.message:test}")
     private String message = "Hello World";
 
+    public static ThreadLocal<String> threadLocal = new ThreadLocal<>();
+
     @RequestMapping("/welcome")
     public String welcome(Map<String, Object> model) {
+        threadLocal.set("abc");
+        String tmp = threadLocal.get();
         model.put("message", this.message);
         System.out.println("BigObject gced: " + BigObject.getBigObjectFinalizeCount());
         return "welcome";
     }
 
+    @RequestMapping("/welcome2")
+    public String welcome2(Map<String, Object> model) {
+        threadLocal.set("def");
+        String tmp = threadLocal.get();
+        model.put("message", this.message);
+        System.out.println("BigObject gced: " + BigObject.getBigObjectFinalizeCount());
+        return "welcome";
+    }
 }
